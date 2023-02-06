@@ -79,5 +79,8 @@ lbl2 = Label(root,text="HAVE FUN",pady=10,font=("Arial",30))
 lbl2.place(relx=0.1,rely=0.3)
 lbl2.configure(bg="light yellow")
 
+
+# this if statement ensures that our program will execute only when our file is runned directly not by importing it
+if __name__=="__main__":
 # running the loop
-root.mainloop()
+	root.mainloop()
