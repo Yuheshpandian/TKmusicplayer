@@ -1,17 +1,22 @@
+# importing all needed libraries
 import os
 from pygame import mixer,init
 from tkinter import *
 
+# initialising ygame
 init()
 
+# som important variables
 path = 'C:\\Users\\User\\Music'
 index = 0
 list1 = os.listdir(path)
 
 mixer.music.load(list1[index])
 text=list1[index]
+
+# buttons command functions
+
 def play():
-	
 	mixer.music.play()
 
 def pause():
@@ -38,13 +43,13 @@ def backward(index):
 	lbl.place(relx=0.0,rely=0.6)
 	lbl.configure(bg="light yellow")
 
-
+# creating the window
 root = Tk()
 root.title("MUSICPLAYER")
 root.geometry("270x300")
 root.configure(bg="light yellow")
 
-
+# creating and placing all buttons
 playbtn = Button(root, text="PLAY",padx=10,pady=15,command=play)
 playbtn.place(relx=0.0,rely=0.8)
 playbtn.configure(bg="gold")
@@ -65,6 +70,7 @@ bbtn = Button(root, text=">",padx=10,pady=15,command=lambda : backward(index))
 bbtn.place(relx=0.8,rely=0.8)
 bbtn.configure(bg="grey")
 
+# creating the labels
 lbl = Label(root,text=f"playing: {text}",pady=10,font=("Arial",13))
 lbl.place(relx=0.0,rely=0.6)
 lbl.configure(bg="light yellow")
@@ -73,4 +79,5 @@ lbl2 = Label(root,text="HAVE FUN",pady=10,font=("Arial",30))
 lbl2.place(relx=0.1,rely=0.3)
 lbl2.configure(bg="light yellow")
 
+# running the loop
 root.mainloop()
